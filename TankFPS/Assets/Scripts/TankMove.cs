@@ -10,6 +10,8 @@ public class TankMove : MonoBehaviour
     public int playerNum = 1;
     string mvAxisName;
     string roAxisName;
+
+    public Rigidbody tank;
     private int count;
 
     // Start is called before the first frame update
@@ -27,6 +29,8 @@ public class TankMove : MonoBehaviour
 
         transform.Translate(0, 0, mv);
         transform.Rotate(0, ro, 0);
+        
+
         /*       float vmv = Input.GetAxis(mvAxisName);
                float hro = Input.GetAxis(roAxisName);
 

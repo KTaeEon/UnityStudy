@@ -27,14 +27,10 @@ public class TankController : MonoBehaviour
         mouseY += Input.GetAxis("Mouse X") * turnSpeed ;
         mouseX += Input.GetAxis("Mouse Y") * turnSpeed ;
 
-        mouseY = Mathf.Clamp(mouseY, -55.0f, 55.0f);
-        mouseX = Mathf.Clamp(mouseX, -40.0f, 40.0f );
+        mouseY = Mathf.Clamp(mouseY, -70.0f, 70.0f);
+        mouseX = Mathf.Clamp(mouseX, -15.0f, 40.0f );
 
-        float ry = mouseY + tank.eulerAngles.y + tank.eulerAngles.z;
-        float rx = -mouseX + tank.eulerAngles.x + tank.eulerAngles.z;
-        float rz = mouseZ + tank.eulerAngles.z;
-
-        transform.eulerAngles = new Vector3(rx, ry, rz);
+        transform.localEulerAngles = new Vector3(-mouseX, mouseY, 0);
         
     }
 
